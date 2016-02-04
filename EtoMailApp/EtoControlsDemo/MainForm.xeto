@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form
+	xmlns="http://schema.picoe.ca/eto.forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="My Eto Form" Size="500,700">
+  <Scrollable ExpandContentHeight="True" ExpandContentWidth="True" >
+    <TableLayout Spacing="10,10" Padding="10,10">  
+      <TableRow>
+        <Label Text="Label"/>
+        <Label Text="Label" TextAlignment="Center"  TextColor="RoyalBlue"/>
+      </TableRow>
+      <TableRow>
+        <Label Text="Button"/>
+        <Button Text="Button"></Button>
+        <!--<Button Text="Button" Style="btnDemo" ImagePosition="Above" /> -->       
+      </TableRow>
+      <TableRow>
+        <Label>Calendar</Label>
+        <Calendar Mode="Range"></Calendar>
+      </TableRow>
+      <TableRow>
+        <Label>CheckBox</Label>
+        <CheckBox Text="CheckBox" Checked="True" ThreeState="True"></CheckBox>
+      </TableRow>
+      <TableRow>
+        <Label>ColorPicker</Label>
+        <ColorPicker Value="RoyalBlue"></ColorPicker>
+      </TableRow>
+      <TableRow>
+        <Label>ComboBox</Label>
+        <ComboBox AutoComplete="True" Text="ComboBox">
+          <ComboBox.DataStore>
+            <ListItemCollection>
+              <ListItem>ListItem0</ListItem>
+              <ListItem>ListItem1</ListItem>
+            </ListItemCollection>
+          </ComboBox.DataStore>
+        </ComboBox> 
+      </TableRow>
+      <TableRow>
+        <Label>DateTimePicker</Label>
+        <DateTimePicker TextColor="RoyalBlue" Mode="Time"></DateTimePicker>
+      </TableRow>
+      <TableRow>
+        <Label>Drawable</Label>
+        <Drawable Style="drawable" Size="50,50">
+          <Drawable.Content>
+            <Label>Content</Label>
+          </Drawable.Content>
+        </Drawable>
+      </TableRow>
+      <TableRow>
+        <Label>DropDown</Label>
+        <DropDown>
+          <DropDown.DataStore>
+            <ListItemCollection>
+              <ListItem>DropDown ListItem0</ListItem>
+              <ListItem>DropDown ListItem1</ListItem>
+            </ListItemCollection>
+          </DropDown.DataStore>
+        </DropDown>
+      </TableRow>
+<!--  <TableRow>
+        <Label>GridView</Label>
+        <GridView  AllowColumnReordering="True" GridLines="Both" >
+          <GridColumn  HeaderText="GridColumn0">
+            <GridColumn.DataCell>
+              <TextBoxCell></TextBoxCell>
+            </GridColumn.DataCell>
+          </GridColumn>
+          <GridColumn HeaderText="GridColumn1">
+            <CheckBoxCell></CheckBoxCell>
+          </GridColumn>
+          <GridView.DataStore>
+            <ListItemCollection>
+              <ListItem Text="1"></ListItem>
+              <ListItem Text="2"></ListItem>
+            </ListItemCollection>
+          </GridView.DataStore>
+        </GridView>
+      </TableRow> 
+-->
+      <TableRow>
+        <Label>GroupBox</Label>
+        <GroupBox Text="GroupBox">
+          <Label>GroupBox Content</Label>
+        </GroupBox>
+      </TableRow>
+      <TableRow>
+        <Label>ImageView</Label>
+        <ImageView Style="imageView" Size="100,100"></ImageView>
+      </TableRow>
+      <TableRow>
+        <Label>LinkButton</Label>
+        <LinkButton Text="LinkButton"></LinkButton>
+      </TableRow>
+      <TableRow>
+        <Label>ListBox</Label>
+        <ListBox>
+          <ListBox.DataStore>
+            <ListItemCollection>
+              <ListItem Text="One"></ListItem>
+              <ListItem Text="Two"></ListItem>
+            </ListItemCollection>
+          </ListBox.DataStore>
+        </ListBox>
+      </TableRow>
+      <TableRow>
+        <Label>MaskedTextBox</Label>
+        <MaskedTextBox PlaceholderText="MaskedTextBox"></MaskedTextBox>
+      </TableRow>
+      <TableRow>
+        <Label>NumericUpDown</Label>
+        <NumericUpDown Increment="0.5" Value="5" DecimalPlaces="2"></NumericUpDown>
+      </TableRow>
+      <TableRow>
+        <Label>PasswordBox</Label>
+        <PasswordBox PasswordChar="@" TextColor="Red" Text="123"></PasswordBox>
+      </TableRow>
+      <TableRow>
+        <Label>RadioButtonList</Label>    
+        <RadioButtonList Orientation="Horizontal">
+          <ListItem Text="One"></ListItem>
+          <ListItem Text="Two"></ListItem>
+        </RadioButtonList>
+      </TableRow>
+      <TableRow>
+        <Label>RadioButton</Label>
+        <RadioButton Checked="True">RadioButton</RadioButton>
+      </TableRow>
+      <TableRow>
+        <Label>ProgressBar</Label>
+        <ProgressBar MinValue="0" MaxValue="10" Value="3"></ProgressBar>
+      </TableRow>
+      <TableRow>
+        <Label>RichTextArea</Label>
+        <RichTextArea AcceptsReturn="True" AcceptsTab="True" SpellCheck="True" Wrap="True">RichTextArea    
+        RichTextArea    RichTextArea 
+        RichTextArea</RichTextArea>
+      </TableRow>
+      <TableRow>
+        <Label>SearchBox</Label>
+        <SearchBox>SearchBox</SearchBox>
+      </TableRow>
+      <TableRow>
+        <Label>Slider</Label>
+        <Slider MinValue="0" MaxValue="10" Value="3" Orientation="Horizontal" TickFrequency="1"></Slider>
+      </TableRow>
+      <TableRow>
+        <Label>Spinner</Label>
+        <Spinner Enabled="True" Visible="True" Height="150"></Spinner>
+      </TableRow>
+      <TableRow>
+        <Label>TextArea</Label>
+        <TextArea AcceptsReturn="True" AcceptsTab="True">
+          TextArea
+              TextArea
+        </TextArea>
+      </TableRow>
+      <TableRow>
+        <Label>TextBox</Label>
+        <TextBox>TextBox</TextBox>
+      </TableRow>
+  <TableRow>
+        <Label>TreeView</Label>
+        <TreeView LabelEdit="True">
+          <TreeView.DataStore>
+            <TreeItemCollection>
+              <TreeItem Expanded="True" Text="1">
+                <TreeItem Expanded="True" Text="11">
+                  <TreeItem Expanded="False" Text="111"/>
+                </TreeItem>
+              </TreeItem>
+              <TreeItem Expanded="True" Text="2"/>
+            </TreeItemCollection>
+          </TreeView.DataStore>
+        </TreeView>
+      </TableRow>
+<!--
+      <TableRow>
+        <Label>TreeGridView</Label>
+        <TreeGridView AllowMultipleSelection="True" AllowColumnReordering="True" GridLines="Both">
+          <GridColumn Sortable="True" HeaderText="GridColumn0" Editable="True"/>
+          <GridColumn HeaderText="GridColumn1"/>
+          <TreeGridView.DataStore>
+            <TreeGridItemCollection>
+              <TreeGridItem Expanded="True">
+                <TreeGridItem Expanded="False">
+                  <TreeGridItem>
+                  </TreeGridItem>
+                </TreeGridItem>
+              </TreeGridItem>
+            </TreeGridItemCollection>
+          </TreeGridView.DataStore>
+        </TreeGridView>
+      </TableRow>
+-->
+      <TableRow>
+        <Label>WebView</Label>
+       <WebView Url="https://www.google.com" Height="250"></WebView>
+      </TableRow>
+      <TableRow>
+       <Label Height="250">...</Label>
+      </TableRow>
+    </TableLayout>
+  </Scrollable>
+<!--  <Form.Menu>
+		<MenuBar>
+			<ButtonMenuItem Text="F&amp;ile">
+				<Command x:Name="clickCommand" MenuText="Click Me!" ToolBarText="Click Me!" Executed="HandleClickMe" />
+			</ButtonMenuItem>
+			<MenuBar.ApplicationItems>
+				<ButtonMenuItem Text="Preferences.." Shortcut="{On Control+O, Mac=Application+Comma}" />
+			</MenuBar.ApplicationItems>
+			<MenuBar.QuitItem>
+				<ButtonMenuItem Text="Quit!" Shortcut="CommonModifier+Q" Click="HandleQuit" />
+			</MenuBar.QuitItem>
+		</MenuBar>
+	</Form.Menu>
+	<Form.ToolBar>
+		<ToolBar>
+			<x:Reference Name="clickCommand"/>
+		</ToolBar>
+	</Form.ToolBar>
+-->
+</Form>

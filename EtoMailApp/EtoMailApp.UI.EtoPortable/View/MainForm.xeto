@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form
+	xmlns="http://schema.picoe.ca/eto.forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:core="clr-namespace:EtoMailApp.Core;assembly=EtoMailApp.Core"
+	Title="Mailing"
+	MinimumSize="700,500"
+	>
+  <TableLayout Spacing="3,3" Padding="10">
+    <TableRow >
+      <TableLayout Spacing="3,3" >
+        <TableRow>
+          <TableRow.Cells>
+            <TableCell ScaleWidth="False">
+              <Label Text="From:" VerticalAlignment="Center"/>
+            </TableCell>
+            <TableCell>
+              <TextBox PlaceholderText="from@e-mail.com" Text="{Binding From}"/>
+            </TableCell>
+          </TableRow.Cells>
+        </TableRow>
+        <TableRow>
+          <TableCell ScaleWidth="False">
+            <Label Text="Subject:" VerticalAlignment="Center"/>
+          </TableCell>
+          <TableCell>
+            <TextBox PlaceholderText="Subject..." Text="{Binding Subject}"/>
+          </TableCell>
+        </TableRow>
+        <TableRow ScaleHeight="True">
+          <TableCell ScaleWidth="False">
+            <Label Text="Recepients:"/>
+          </TableCell>
+          <TableCell ScaleWidth="True">
+            <TableLayout Spacing="3,3">
+              <TableRow>
+                <TableCell ScaleWidth="True">
+                  <ListBox Height="100" DataStore="{Binding Recipients}"  SelectedValue="{Binding SelectedRecipient}"/>
+                </TableCell>
+                <TableCell ScaleWidth="False">
+                  <TableLayout Spacing="3,3" Width="170">
+                    <TableRow>
+                      <CheckBox Text="Read confirmation" Checked="{Binding ReadConfirmation}"/>
+                    </TableRow>
+                    <TableRow>
+                      <CheckBox Text="Receive confirmation" Checked="{Binding ReceiptConfirmation}"/>
+                    </TableRow>
+                    <TableRow>
+                      <TableLayout Spacing="3,3">
+                        <TableRow>
+                          <TableCell  ScaleWidth="True">
+                            <Button Text="Add" Command="{Binding AddRecipientCommand}" />
+                          </TableCell>
+                          <TableCell  ScaleWidth="True">
+                            <Button Text="Remove" Command="{Binding RemoveRecipientCommand}" />
+                          </TableCell>
+                        </TableRow>
+                        <TableRow >
+                          <TableCell ScaleWidth="True">
+                            <Button Text="Save list" Command="{Binding SaveRecipientsCommand}"/>
+                          </TableCell>
+                          <TableCell ScaleWidth="True">
+                            <Button Text="Load list" Command="{Binding LoadRecipientsCommand}"/>
+                          </TableCell>
+                        </TableRow>
+                        <TableRow/>
+                      </TableLayout>
+                    </TableRow>
+                  </TableLayout>
+                </TableCell>
+              </TableRow>
+            </TableLayout>
+          </TableCell>
+        </TableRow>
+        <TableRow ScaleHeight="True">
+          <TableCell ScaleWidth="False">
+            <Label Text="Attachments:"/>
+          </TableCell>
+          <TableCell ScaleWidth="True">
+            <TableLayout Spacing="3,3">
+              <TableRow>
+                <TableCell ScaleWidth="True">
+                  <ListBox Height="100" DataStore="{Binding Attachments}" SelectedValue="{Binding SelectedAttachment}">
+                    <ListBox.ItemTextBinding>
+                      <ColumnBinding Column="FileName" />
+                    </ListBox.ItemTextBinding>
+                  </ListBox>
+                </TableCell>
+                <TableCell>
+                  <TableLayout Spacing="3,3" Width="170">
+                    <TableRow>
+                      <TableCell  ScaleWidth="True">
+                        <Button Text="Add" Command="{Binding AddAttachmentCommand}"/>
+                      </TableCell>
+                      <TableCell  ScaleWidth="True">
+                        <Button Text="Remove" Command="{Binding RemoveAttachmentCommand}" />
+                      </TableCell>
+                    </TableRow>
+                    <TableRow/>
+                  </TableLayout>
+                </TableCell>
+              </TableRow>
+            </TableLayout>
+          </TableCell>
+        </TableRow>
+      </TableLayout>
+    </TableRow>
+    <TableRow ScaleHeight="True">
+      <TableCell>
+        <RichTextArea AcceptsReturn="True" AcceptsTab="True" Text="{Binding Message}"/>
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <StackLayout Spacing="3" Orientation="Horizontal">
+        <StackLayoutItem HorizontalAlignment="Stretch" Expand="True">
+          <ProgressBar MinValue="0"  MaxValue="{Binding MailsTotal}" Value="{Binding MailsSending}" Visible="{Binding IsBusy}"/>
+        </StackLayoutItem>
+        <StackLayoutItem HorizontalAlignment="Right">
+          <Button Text="Send" Command="{Binding SendCommand}"/>
+        </StackLayoutItem>
+      </StackLayout>
+     
+    </TableRow>
+    <TableRow/>
+  </TableLayout>
+
+  <Form.Menu>
+    <MenuBar>
+      <ButtonMenuItem Text="F&amp;ile" >
+        <ButtonMenuItem Text="Load e-Mails!" Command="{Binding LoadRecipientsCommand}"/>
+      </ButtonMenuItem>
+      <MenuBar.ApplicationItems>
+        <ButtonMenuItem Text="Preferences.." Shortcut="{On Control+O, Mac=Application+Comma}" />
+      </MenuBar.ApplicationItems>
+      <MenuBar.QuitItem>
+        <ButtonMenuItem Text="Quit!" Shortcut="CommonModifier+Q" Command="{Binding QuitCommand}" />
+      </MenuBar.QuitItem>
+    </MenuBar>
+  </Form.Menu>
+  <Form.ToolBar>
+    <ToolBar>
+      <ButtonToolItem Text="Load e-Mails!" Command="{Binding LoadRecipientsCommand}"/>
+    </ToolBar>
+  </Form.ToolBar>
+</Form>

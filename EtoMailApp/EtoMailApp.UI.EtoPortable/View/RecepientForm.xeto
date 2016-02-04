@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Dialog
+  xmlns="http://schema.picoe.ca/eto.forms" 
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local ="clr-namespace:EtoMailApp.Core.ViewModel"
+   Title="Recipient" 
+  Minimizable="False" 
+  Maximizable="False" 
+  Resizable="False"
+  ShowInTaskbar="False" 
+  WindowStyle="Default"
+  ClientSize="400,-1"
+  >
+	<StackLayout Padding="10" Spacing="5" >
+		<StackLayoutItem  HorizontalAlignment="Stretch">
+      <TableLayout Spacing="3,3">
+        <TableRow>
+          <TableCell>
+            <Label Text="E-mail:" VerticalAlignment="Center"/>
+          </TableCell>
+          <TableCell>
+            <TextBox PlaceholderText="same@e-mail.com" Text="{Binding Email}" TextChanged="OnTextChanged"/>
+          </TableCell>
+        </TableRow>
+      </TableLayout>
+      
+		</StackLayoutItem>
+		<StackLayoutItem HorizontalAlignment="Right">
+			<StackLayout Orientation="Horizontal" Spacing="5">
+				<Button Text="OK" Command="{Binding AddEmailCommand}" />
+			</StackLayout>
+		</StackLayoutItem>
+	</StackLayout>
+</Dialog>
